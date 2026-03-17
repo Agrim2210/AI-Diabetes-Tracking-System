@@ -1,0 +1,20 @@
+**pycache**/
+*.pyc
+
+# virtual env
+
+venv/
+.env/
+
+# notebooks
+
+.ipynb_checkpoints/
+
+# logs
+
+*.log
+
+# OS files
+
+.DS_Store
+Thumbs.db
