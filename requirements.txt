@@ -2,7 +2,9 @@
 #  Diabetes Prediction System — requirements.txt
 #  Python 3.10 compatible (tested range: 3.10.x)
 # ─────────────────────────────────────────────────────
-
+pip>=23.0
+setuptools>=65.0
+wheel
 # ── Web Framework ──────────────────────────────────────
 fastapi==0.111.1
 uvicorn[standard]==0.30.6
@@ -25,8 +27,8 @@ pydantic[email]==2.8.2           # request/response schemas + email validation
 # ── ML Core ─────────────────────────────────────────────
 scikit-learn==1.5.1
 joblib==1.4.2
-numpy==1.26.4                    # last version with full Py3.10 wheels
-pandas==2.2.2
+numpy==1.24.3                    # last version with full Py3.10 wheels
+pandas==2.0.3
 
 # ── PDF Report & Charts ─────────────────────────────────
 reportlab==4.2.2                 # PDF generation
