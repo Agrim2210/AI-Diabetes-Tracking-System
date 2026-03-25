@@ -3,7 +3,7 @@
 #  Python 3.10 compatible (tested range: 3.10.x)
 # ─────────────────────────────────────────────────────
 pip>=23.0
-setuptools>=65.0
+setuptools
 wheel
 # ── Web Framework ──────────────────────────────────────
 fastapi==0.111.1
