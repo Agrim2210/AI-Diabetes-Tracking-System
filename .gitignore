@@ -3,7 +3,7 @@
 
 # virtual env
 
-venv/
+myenv/
 .env/
 
 # notebooks
@@ -18,3 +18,4 @@ venv/
 
 .DS_Store
 Thumbs.db
+.env
