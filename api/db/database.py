@@ -4,13 +4,12 @@ from api.core.config import settings
 
 # ── Engine ────────────────────────────────────────────────────────────────────
 # pool_pre_ping=True: test connection health before using it from the pool
-# pool_recycle=3600: recycle connections every hour to avoid MySQL's 8hr timeout
 
 engine = create_engine(
-    settings.DATABASE_URL,
+    settings.get_database_url(),    
     pool_pre_ping=True,
     pool_recycle=3600,
-    echo=(settings.APP_ENV == "development"),  # log SQL queries in dev only
+    echo=(settings.APP_ENV == "development"),
 )
 
 # ── Session Factory ───────────────────────────────────────────────────────────
