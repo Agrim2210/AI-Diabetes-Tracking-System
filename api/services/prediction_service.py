@@ -8,7 +8,6 @@ from api.db import models
 from api.db.models import RiskLevel
 from api.schemas.prediction import PatientData
 
-# ── Model Loading ─────────────────────────────────────────────
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
@@ -26,7 +25,6 @@ def _load_artifacts():
         _expected_cols = joblib.load(BASE_DIR / "model" / "columns.pkl")
 
 
-# ── Feature Engineering ───────────────────────────────────────
 
 def _engineer_features(patient_data: PatientData) -> np.ndarray:
     MEDIANS = {
@@ -58,7 +56,6 @@ def _engineer_features(patient_data: PatientData) -> np.ndarray:
     else:
         bmi_cat = "Obese"
 
-    # ── Age Group (Middle is baseline — dropped during training) ─
     if age < 30:
         age_group = "Young"
     elif age < 50:
@@ -105,14 +102,6 @@ def _engineer_features(patient_data: PatientData) -> np.ndarray:
 
     # Force every column to float — prevents string conversion errors
     row = row.apply(pd.to_numeric, errors='coerce').fillna(0).astype(float)
-
-    # ── Debug ─────────────────────────────────────────────────────
-    print("=== FEATURE DEBUG ===")
-    print(f"  gluc={gluc}, bmi={bmi}, ins={ins}, age={age}")
-    print(f"  gluc_level={gluc_level}, bmi_cat={bmi_cat}, age_group={age_group}")
-    print(f"  Shape: {row.shape}")
-    print(row.to_string())
-    print("=====================")
 
     return row.values
 
