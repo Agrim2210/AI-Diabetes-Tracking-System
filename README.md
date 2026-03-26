@@ -13,6 +13,8 @@ Unlike basic ML projects, this system is designed as a **real-world application*
 🔗 https://ai-powered-diabetes-tracking-system.onrender.com
 
 ---
+## Demo Video Link
+https://www.loom.com/share/9528827c8ff2429e9af5b61733f44c04
 
 ## 💡 Key Features
 
