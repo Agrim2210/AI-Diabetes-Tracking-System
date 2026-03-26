@@ -1,159 +1,160 @@
-# 🧠 Diabetes Prediction System — ML Learning Journey
+# 🧠 AI Diabetes Tracking System (Prediction & Tracking)
 
-## 🚀 Project Overview
+## 🚀 Overview
 
-This project is not just a machine learning model — it is a **complete learning journey** of building an end-to-end ML system from scratch.
+This project is a **full-stack AI-powered health monitoring system** that predicts diabetes risk and tracks patient health over time.
 
-The goal is to predict whether a person is likely to have diabetes based on medical features such as glucose level, BMI, age, etc.
-
-But more importantly, the goal is:
-
-> 💡 **To deeply understand machine learning concepts step-by-step and document real learning progression — not copy-paste code.**
+Unlike basic ML projects, this system is designed as a **real-world application**, combining machine learning, backend engineering, database management, and deployment.
 
 ---
 
-## 🎯 Motivation Behind This Project
+## 🌐 Live Demo
 
-Most ML projects online:
-
-* directly use pre-written code
-* skip core understanding
-* focus only on results
-
-This project is different.
-
-👉 It is built with a focus on:
-
-* understanding *why* each step is done
-* experimenting with different models
-* improving step-by-step like a real ML engineer
+🔗 https://ai-powered-diabetes-tracking-system.onrender.com
 
 ---
 
-## 🛠️ What This Project Covers
+## 💡 Key Features
 
-This project evolves through multiple phases:
+### 🧠 Machine Learning Pipeline
 
-### 🔹 Phase 1 — Basic Model
+* End-to-end pipeline (EDA → Preprocessing → Feature Engineering → Model Training)
+* Multiple models compared using **cross-validation**
+* Models evaluated using:
 
-* Data loading & preprocessing
-* Train-test split
-* First model using Logistic Regression
-
-👉 Goal: Build a working baseline model
-
----
-
-### 🔹 Phase 2 — Model Comparison
-
-* Decision Tree
-* Random Forest
-* SVM
-* KNN
-
-👉 Goal: Understand how different models behave on the same data
+  * Accuracy
+  * Precision
+  * Recall
+  * F1 Score
+* Final model selected based on **Recall (medical priority)**
 
 ---
 
-### 🔹 Phase 3 — Evaluation & Validation
+### 🤖 Model Performance
 
-* Accuracy, Precision, Recall, F1 Score
-* ROC-AUC
-* K-Fold Cross Validation
+| Model               | Accuracy | Precision | Recall | F1 Score |
+| ------------------- | -------- | --------- | ------ | -------- |
+| Random Forest       | 0.89     | 0.84      | 0.79   | 0.82     |
+| Decision Tree       | 0.85     | 0.78      | 0.76   | 0.77     |
+| Logistic Regression | 0.85     | 0.78      | 0.75   | 0.76     |
+| SVM                 | 0.86     | 0.82      | 0.72   | 0.77     |
 
-👉 Goal: Learn how to properly evaluate ML models
-
----
-
-### 🔹 Phase 4 — Model Explainability
-
-* SHAP / LIME
-* Feature importance analysis
-
-👉 Goal: Understand **why the model makes predictions**
+👉 Final Model: **Random Forest**
 
 ---
 
-### 🔹 Phase 5 — Deployment
+### ⚙️ Backend (FastAPI)
 
-* Streamlit web app
-* User input → Real-time prediction
-
-👉 Goal: Convert ML model into a usable product
-
----
-
-## 📊 Dataset
-
-The project uses the **Pima Indians Diabetes Dataset**, which contains medical predictor variables and a binary outcome.
-
-Features include:
-
-* Glucose
-* BMI
-* Blood Pressure
-* Age
-* Insulin
-* Pregnancies
-
-Target:
-
-* `0` → No Diabetes
-* `1` → Diabetes
+* REST API built with FastAPI
+* High-performance async endpoints
+* Swagger UI for testing (`/docs`)
 
 ---
 
-## 🧠 Key Learning Outcomes
+### 🔐 Authentication
 
-Through this project, I aim to master:
-
-* End-to-end ML pipeline
-* Model comparison & selection
-* Bias vs variance understanding
-* Evaluation metrics (beyond accuracy)
-* Real-world ML thinking
-* Model interpretability
-* Deployment of ML systems
+* JWT-based login system
+* Secure protected endpoints
 
 ---
 
-## 📈 Project Philosophy
+### 🗄️ Database Integration
 
-This project follows a **build → test → improve → explain → deploy** approach.
+* PostgreSQL database
+* SQLAlchemy ORM
+* Stores:
 
-Each phase is committed separately to show:
-
-* real progress
-* mistakes and improvements
-* evolving understanding
-
-👉 This repository represents **learning in public**, not just final results.
+  * User data
+  * Predictions
+  * Historical records
 
 ---
 
-## 💡 Why This Project Stands Out
+### 📊 Health Tracking System
 
-✔ Not a copy-paste tutorial
-✔ Step-by-step evolution
-✔ Multiple models + comparison
-✔ Real evaluation techniques
-✔ Explainable AI
-✔ Deployment included
+* Tracks user prediction history
+* Analyzes trends over time
+* Detects:
 
----
-
-## 🔥 Future Improvements
-
-* Hyperparameter tuning
-* Feature engineering
-* Multi-disease prediction system
-* Backend API integration (FastAPI)
-* Model monitoring
+  * Improvement ✅
+  * Stable ➖
+  * Increasing Risk ⚠️
 
 ---
 
-## 🙌 Final Note
+### 📄 Report Generation
 
-This project may start simple, but the intention is to build it into a **production-level ML system** while strengthening core concepts.
+* Downloadable PDF reports
+* Includes prediction + insights
 
 ---
+
+### 🌐 Deployment
+
+* Backend deployed on Render
+* Cloud PostgreSQL database
+* Production-ready API
+
+---
+
+## 🧠 System Architecture
+
+User → FastAPI → ML Model → Prediction
+                ↓
+              Database
+                ↓
+      History + Trend Analysis + Insights
+
+---
+
+## 📂 Project Structure
+
+```
+├── api/                # FastAPI backend
+├── src/                # ML scripts
+├── data/               # datasets
+├── notebooks/          # EDA & experiments
+├── models/             # trained model
+├── results/            # evaluation outputs
+├── requirements.txt
+├── runtime.txt
+├── README.md
+```
+
+---
+
+## 🚀 How to Run Locally
+
+```bash
+pip install -r requirements.txt
+uvicorn api.main:app --reload
+```
+
+---
+
+## 💀 What Makes This Project Special
+
+✔ Not just prediction — full monitoring system
+✔ Real-world ML decision making (recall-based)
+✔ Backend + ML + DB integration
+✔ Trend analysis system
+✔ Deployed production API
+
+---
+
+
+## 🧠 Learning Outcome
+
+This project demonstrates:
+
+* End-to-end ML system design
+* Model evaluation & selection strategy
+* Backend API development
+* Database integration
+* Deployment & debugging in production
+
+---
+
+## 📌 Final Note
+
+> This is not just a machine learning model — it is a complete AI system built to simulate real-world healthcare applications.
